@@ -10,6 +10,7 @@ ENERGY_DASHBOARD_LIVE_URL = 'https://www.energydashboard.co.uk/live'
 def populate_object(input_data, output_object):
     for v in input_data:
         name, percent = v.split('-')
+        name = name.lower()
         raw_percent = percent.replace('%', '') if '%' in percent else percent
         raw_percent = float(raw_percent)
         output_object[name] = raw_percent
